@@ -13,6 +13,9 @@ end
 gem 'jquery-rails'
 
 gem 'rspec-rails', :group => [:test, :development]
+group :development do
+  gem 'nifty-generators'
+end
 group :test do
   gem 'turn', '~> 0.8.3', :require => false
   gem 'factory_girl_rails'

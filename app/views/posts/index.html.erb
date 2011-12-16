@@ -1,0 +1,16 @@
+<% title "Posts" %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+  </tr>
+  <% for post in @posts %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.body %></td>
+      <td><%= link_to "Show", post %></td>
+    </tr>
+  <% end %>
+</table>
+

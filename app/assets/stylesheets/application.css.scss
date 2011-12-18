@@ -5,11 +5,67 @@
  *= require base
  *= require layout
  *= require skeleton
- *= require_tree . 
+ (off) require_tree . 
  *= require_self
 */
 
+$blue: #227CE8;
+$grey: #C8C8C8;
+$yellow: #F9FC7E;
+
 body {
-  width: 600px;
-  margin: 0 auto;
+  font-family: Georgia, 'Times New Roman' ,Times;
+  font-size: 16px;
+  margin-top: 25px;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+  &:hover { 
+    text-decoration: underline; 
+    color: $blue;
+  }
+  &:visited {
+    color: $blue;
+  }
+}
+
+.header {
+  margin-bottom: 25px;
+  .logo {
+    vertical-align: middle;
+    background: url('coffee.png') no-repeat 6% 54% $yellow;
+    font-size: 20px;
+    display: inline;
+    padding: 2px 4px 2px 25px;
+    a {
+      &:hover {
+        color: #000;
+        text-decoration: none;
+      }
+      &:visited {
+        color: #000;
+      }
+    }
+
+  }
+  .nav {
+    display: inline;
+    margin: 0;
+    .link {
+      display: inline;
+    }
+  }
+}
+
+.posts {
+  list-style: none;
+  .post {
+    padding-bottom: 5px;
+    border-bottom: 1px solid $grey;
+    .post-date {
+      text-align: right;
+    }
+  }
 }

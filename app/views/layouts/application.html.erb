@@ -8,11 +8,21 @@
     <%= yield(:head) %>
   </head>
   <body>
-    <div id="container">
+    <div class="container">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
-      <%= content_tag :h1, yield(:title) if show_title? %>
+
+      <div class="header">
+        <h1 class="logo"><%= link_to 'danneu', root_path %></h1> 
+        <span class="tagline">&mdash; a 23-year-old guy with a blog &mdash;</span>
+        <ul class="nav">
+          <li class="link"><%= link_to "about me", root_path %></li>
+        </ul>
+        →
+      </div>
+
+      <%= content_tag :h2, yield(:title) if show_title? %>
       <%= yield %>
     </div>
   </body>

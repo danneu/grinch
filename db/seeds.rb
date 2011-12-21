@@ -1,4 +1,10 @@
 Post.destroy_all
+Category.destroy_all
+
+Category.create(name: "unfiled")
+Category.create(name: "programming")
+Category.create(name: "how-to")
+
 Post.create(
   title: "My First Post",
   body: """

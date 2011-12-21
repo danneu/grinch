@@ -1,4 +1,12 @@
 <% title @post.title %>
+<div class="post-meta clearfix">
+  <div class="post-categories thirteen columns alpha">
+    Categories:
+  </div>
+  <div class="post-date three columns omega">
+    <%= simple_date @post.created_at %>
+  </div>
+</div>
 
 <%= raw  @post.rendered_body %>
 

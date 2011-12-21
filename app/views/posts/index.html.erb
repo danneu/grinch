@@ -2,7 +2,7 @@
   <% for post in @posts %>
     <div class="post row">
       <div class="post-title twelve columns alpha"><%= link_to post.title, post %></div>
-      <div class="post-date four columns omega"><%= post.created_at.to_s(:short) %></div>
+      <div class="post-date four columns omega"><%= simple_date post.created_at %></div>
     </div>
   <% end %>
 </div> 

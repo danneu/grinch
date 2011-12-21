@@ -6,8 +6,8 @@ Hello,
 
 This is my first time making a post.
 
-I hope you enjoy."""
-)
+I hope you enjoy.""")
+
 Post.create(
   title: "My Second Post",
   body: """
@@ -17,7 +17,27 @@ Twice.
 
 I'm excited.
 
-    Here's some `pre` code.
+How did that look? """)
 
-How did that look? """
-)
+Post.create(
+  title: "This is my Latest Post",
+  body: """
+This is my most recent post.
+
+It should appear at the top.
+
+This should be *emphasized* and this should be **emboldened**.
+
+# h1 Header
+
+## h2 Header
+
+### h3 Header
+
+#### h4 Header
+
+##### h5 Header
+
+###### h6 Header
+
+And that's it! """)

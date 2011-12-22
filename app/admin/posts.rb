@@ -11,6 +11,24 @@ ActiveAdmin.register Post do
     column :created_at
     default_actions
   end
+
+  show do
+    div class: "panel" do
+      h3 post.title
+      div class: "panel_contents" do
+        h3 "Categories"
+        post.categories.each do |cat|
+          ul do
+            li cat.name
+          end
+        end
+        h3 "Markdown"
+        pre post.body
+        h3 "HTML"
+        pre post.rendered_body
+      end
+    end
+  end
   
   form do |f|
     f.inputs :title

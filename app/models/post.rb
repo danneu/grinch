@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
-  attr_accessible :title, :body
-  before_save :render_body, :check_for_default_category
+  attr_accessible :title, :body, :category_ids
+  before_save :render_body
   default_scope order('created_at DESC')
   has_and_belongs_to_many :categories
 

@@ -11,4 +11,11 @@ ActiveAdmin.register Post do
     column :created_at
     default_actions
   end
+  
+  form do |f|
+    f.inputs :title
+    f.inputs :categories
+    f.inputs :body
+    f.buttons
+  end
 end

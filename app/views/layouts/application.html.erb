@@ -13,7 +13,7 @@
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
 
-      <div class="header sixteen columns">
+      <div class="header">
         <h1 class="logo"><%= link_to 'danneu', root_path %></h1> 
         <span class="tagline">&mdash; a 23-year-old guy with a blog &mdash;</span>
         <ul class="nav">
@@ -22,8 +22,10 @@
         →
       </div>
 
-      <%= content_tag :h2, yield(:title) if show_title? %>
-      <%= yield %>
+      <div class="content">
+        <%= content_tag :h2, yield(:title) if show_title? %>
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>

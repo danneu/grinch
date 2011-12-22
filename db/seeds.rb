@@ -47,8 +47,3 @@ This should be *emphasized* and this should be **emboldened**.
 ###### h6 Header
 
 And that's it! """)
-
-Post.all.each do |post|
-  post.categories << Category::DEFAULT
-  post.save!
-end

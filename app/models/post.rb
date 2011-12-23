@@ -8,7 +8,17 @@ class Post < ActiveRecord::Base
 
   def render_body
     require 'rdiscount'
-    self.rendered_body = RDiscount.new(self.body).to_html
+    require 'cgi'
+    #new_body = coderay(CGI.unescapeHTML(self.body))
+    new_body = coderay(self.body)
+    logger.debug new_body
+    self.rendered_body = RDiscount.new(new_body).to_html
+  end
+
+  def coderay(text)
+    text.gsub(/\<code( lang="(.+?)")?\>(.+?)\<\/code\>/m) do
+      CodeRay.scan($3, $2).div(:css => :class)
+    end
   end
 
   def check_for_default_category

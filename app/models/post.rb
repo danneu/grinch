@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   attr_accessible :title, :body, :category_ids
-  before_save :render_body
+  before_save :render_body, :check_for_default_category
   default_scope order('created_at DESC')
   has_and_belongs_to_many :categories
 
@@ -12,6 +12,6 @@ class Post < ActiveRecord::Base
   end
 
   def check_for_default_category
-    self.categories << Category::DEFAULT if self.categories.empty?
+    self.categories << Category::DEFAULT_CATEGORY if self.categories.empty?
   end
 end

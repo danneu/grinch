@@ -2,9 +2,7 @@
 <div class="post-meta clearfix">
   <div class="post-categories thirteen columns alpha">
     <% unless @post.categories.empty? %>
-      <% @post.categories.each do |category| %>
-        <%= link_to category.name, category %>
-      <% end %>
+      <%= raw @post.categories.map { |c| link_to c.name, c }.to_sentence %>
     <% end %>
   </div>
   <div class="post-date three columns omega">

@@ -1,9 +1,12 @@
 .post-meta {
   margin-bottom: 20px;
+  padding: 5px 0;
+  border: {
+    top: 1px dotted;
+    bottom: 1px dotted;
+  }
   .post-date {
-    text-align: center;
-    background: #F9FC7E;
-    color: black;
+    text-align: right;
   }
 }
 

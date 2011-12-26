@@ -8,10 +8,19 @@
     <%= yield(:head) %>
   </head>
   <body>
+
+      <% if current_user %>
+      <div class="admin-bar">
+        You are logged in.
+        <%= link_to "Log out", logout_path %> 
+      </div>
+      <% end %>
+
     <div class="container">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
+
 
       <div class="header">
         <h1 class="logo"><%= link_to 'danneu', root_path %></h1> 

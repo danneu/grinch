@@ -15,9 +15,21 @@ $blue: #227CE8;
 $grey: #C8C8C8;
 $yellow: #F9FC7E;
 
+#flash_alert {
+  background: red;
+  color: white;
+  text-align: center;
+  
+}
+
+label {display:inline;}
+
 body {
   font-family: Georgia, 'Times New Roman' ,Times;
   font-size: 16px;
+}
+
+.container {
   margin-top: 25px;
 }
 
@@ -30,6 +42,14 @@ a {
   }
   &:visited {
     color: $blue;
+  }
+}
+.admin-bar {
+  text-align: center;
+  background: black;
+  color: white;
+  a {
+    color: $yellow;
   }
 }
 

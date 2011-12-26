@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
 gem 'sqlite3'
+gem 'sorcery'
 gem 'rdiscount'
 gem 'coderay'
 gem 'jquery-rails'

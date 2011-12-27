@@ -1,2 +1,7 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<% title @category.name %>
+
+<% if @posts.empty? %>
+  No posts for this category.
+<% else %>
+  <%= render template:  "posts/index" %>
+<% end %>

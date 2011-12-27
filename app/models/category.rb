@@ -4,6 +4,8 @@ class Category < ActiveRecord::Base
   DEFAULT_CATEGORY = Category.where(name: DEFAULT_NAME)
   has_and_belongs_to_many :posts
 
+  validates :name, presence: true
+
   def to_param
     slug
   end

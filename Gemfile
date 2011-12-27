@@ -24,5 +24,7 @@ group :test do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'mocha'
+  gem 'spork', '~> 0.9.0.rc'
+  gem 'guard-spork'
 end
 

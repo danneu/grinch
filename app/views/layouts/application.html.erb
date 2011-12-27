@@ -10,13 +10,21 @@
   <body>
 
     <% if current_user %>
-      <div class="admin-bar">
-        You are logged in.
-        <%= link_to "Log out", logout_path %> 
+      <div class="admin-bar" style="padding: 0 10px;">
+        <span style="float: left">
+          <%= link_to "New Post", new_post_path %>
+          <%= link_to "New Category", new_category_path %>
+        </span>
+        <span style="float: right;">
+          You are logged in.
+          <%= link_to "Log out", logout_path %> 
+        </span>
         <% if content_for? :admin %> 
-          <br />
+          <span style="margin: 0 auto;">
           <%= yield :admin %>
+        </span>
         <% end %>
+        <br style="clear: both;" />
       </div> 
     <% end %>
 

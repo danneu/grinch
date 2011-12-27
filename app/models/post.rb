@@ -1,14 +1,19 @@
 class Post < ActiveRecord::Base
   attr_accessible :title, :body, :category_ids
   before_save :render_body, :check_for_default_category
+  before_create :create_slug
   default_scope order('created_at DESC')
   has_and_belongs_to_many :categories
 
   def to_param
-    "#{id}-#{title.parameterize}"
+    slug
   end
 
   private
+
+  def create_slug
+    self.slug = self.title.parameterize
+  end
 
   def render_body
     require 'rdiscount'

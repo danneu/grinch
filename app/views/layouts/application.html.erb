@@ -9,12 +9,16 @@
   </head>
   <body>
 
-      <% if current_user %>
+    <% if current_user %>
       <div class="admin-bar">
         You are logged in.
         <%= link_to "Log out", logout_path %> 
-      </div>
-      <% end %>
+        <% if content_for? :admin %> 
+          <br />
+          <%= yield :admin %>
+        <% end %>
+      </div> 
+    <% end %>
 
     <div class="container">
       <% flash.each do |name, msg| %>

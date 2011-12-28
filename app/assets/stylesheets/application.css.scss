@@ -29,6 +29,11 @@ body {
   font-size: 16px;
 }
 
+#new_post {
+  input { width: 100%; }
+  textarea { width: 100%; }
+}
+
 .container {
   margin-top: 25px;
 }

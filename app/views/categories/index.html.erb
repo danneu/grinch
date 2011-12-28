@@ -1,9 +1,18 @@
 <table>
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Posts</th>
+    </tr>
+  </thead>
 <% @categories.each do |category| %>
   <tr>
     <td><%= link_to category.name, category %></td>
+    <td><%= category.posts.count %></td>
+    <% if current_user %>
     <td><%= link_to "Edit", edit_category_path(category) %></td> 
     <td><%= link_to "Delete", category, confirm: "Are you sure?", method: :delete %></td>
+  <% end %>
   </tr>
 <% end %>
 </table>

@@ -20,4 +20,24 @@ class PostsController < ApplicationController
       render :new
     end
   end
+
+  def edit
+    @post = Post.find_by_slug!(params[:id])
+  end
+
+  def update
+    @post = Post.find_by_slug!(params[:id])
+    if @post.update_attributes(params[:post])
+      redirect_to @post, notice: "Post updated."
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    redirect_to(root_path) unless current_user
+    @post = Post.find_by_slug!(params[:id])
+    @post.destroy
+    redirect_to root_path, notice: "Post deleted."
+  end
 end

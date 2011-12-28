@@ -17,6 +17,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path, notice: "Post created."
     else
+      flash.now[:error] = "Post not created."
       render :new
     end
   end
@@ -30,6 +31,7 @@ class PostsController < ApplicationController
     if @post.update_attributes(params[:post])
       redirect_to @post, notice: "Post updated."
     else
+      flash.now[:error] = "Post not saved."
       render :edit
     end
   end

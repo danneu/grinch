@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if user
       redirect_back_or_to root_url
     else
-      flash.now.alert = "Login Failed: Incorrect Creds."
+      flash.now[:error] = "Login Failed: Incorrect Creds."
       render :new
     end
   end

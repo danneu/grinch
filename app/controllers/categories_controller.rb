@@ -20,6 +20,7 @@ class CategoriesController < ApplicationController
     if @category.save
       redirect_to root_path, notice: "Category created."
     else
+      flash.now[:error] = "Category not saved."
       render :new
     end
   end
@@ -35,6 +36,7 @@ class CategoriesController < ApplicationController
     if @category.update_attributes(params[:category])
       redirect_to categories_path, notice: "Category updated."
     else
+      flash.now[:error] = "Category not updated."
       render :edit
     end
   end

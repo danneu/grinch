@@ -14,12 +14,25 @@
 $blue: #227CE8;
 $grey: #C8C8C8;
 $yellow: #F9FC7E;
+$green: #B5FFC8;
 
+@mixin flash {
+  padding-left: 25px;
+  background-position: 5px;
+}
+
+#flash_error {
+  background: url("<%= asset_path('error.png') %>") no-repeat #FF9797;
+  @include flash;
+}
 #flash_alert {
-  background: red;
-  color: white;
-  text-align: center;
-  
+  background: url("<%= asset_path('error.png') %>") no-repeat #FF9797;
+  @include flash;
+}
+
+#flash_notice {
+  background: url("<%= asset_path('success.png') %>") no-repeat $green;
+  @include flash;
 }
 
 label {display:inline;}

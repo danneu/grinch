@@ -8,14 +8,16 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    current_user ? @post = Post.new : redirect_to(root_path)
   end
 
   def create
+    redirect_to(root_path) unless current_user
     @post = Post.new(params[:post])
     if @post.save
       redirect_to root_path, notice: "Post created."
     else
+      render :new
     end
   end
 end

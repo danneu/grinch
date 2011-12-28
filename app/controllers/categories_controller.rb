@@ -10,10 +10,12 @@ class CategoriesController < ApplicationController
   end
 
   def new
+    redirect_to(root_path) unless current_user
     @category = Category.new
   end
 
   def create
+    redirect_to(root_path) unless current_user
     @category = Category.new(params[:category])
     if @category.save
       redirect_to root_path, notice: "Category created."
@@ -23,10 +25,12 @@ class CategoriesController < ApplicationController
   end
 
   def edit
+    redirect_to(root_path) unless current_user
     @category = Category.find_by_slug!(params[:id])
   end
 
   def update
+    redirect_to(root_path) unless current_user
     @category = Category.find_by_slug!(params[:id])
     if @category.update_attributes(params[:category])
       redirect_to categories_path, notice: "Category updated."
@@ -36,6 +40,7 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
+    redirect_to(root_path) unless current_user
     @category = Category.find_by_slug!(params[:id])
     @category.destroy
     redirect_to categories_path, notice: "Category deleted."

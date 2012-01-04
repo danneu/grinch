@@ -46,9 +46,9 @@ to understand the code.
 * **Make the admin user**. One good spot to stick this is in the Sorcery Code
   migration file.
 
-    User.create(username: "Dan", 
-                password: "secret",
-                email:    "dan@example.com")
+        User.create(username: "Dan", 
+                    password: "secret",
+                    email:    "dan@example.com")
 
     (I eventually want the blog to email me if I forget the password.)
 

@@ -8,10 +8,6 @@ class SorceryCore < ActiveRecord::Migration
 
       t.timestamps
     end
-
-    User.create(username: "danneu",
-                email:    "danrodneu@gmail.com",
-                password: "catdog")
   end
 
   def self.down

@@ -1,4 +1,4 @@
-<table>
+<table class="categories">
   <thead>
     <tr>
       <th>Category</th>
@@ -7,8 +7,8 @@
   </thead>
 <% @categories.each do |category| %>
   <tr>
-    <td><%= link_to category.name, category %></td>
-    <td><%= category.posts.count %></td>
+    <td class="category-name"><%= link_to category.name, category %></td>
+    <td class="category-post-count"><%= category.posts.count %></td>
     <% if current_user %>
     <td><%= link_to "Edit", edit_category_path(category) %></td> 
     <td><%= link_to "Delete", category, confirm: "Are you sure?", method: :delete %></td>

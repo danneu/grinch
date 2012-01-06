@@ -99,6 +99,7 @@ GEM
     oauth2 (0.4.1)
       faraday (~> 0.6.1)
       multi_json (>= 0.0.5)
+    pg (0.12.2)
     polyglot (0.3.3)
     rack (1.3.5)
     rack-cache (1.1)
@@ -193,6 +194,7 @@ DEPENDENCIES
   jquery-rails
   mocha
   nifty-generators
+  pg
   rails (= 3.2.0.rc1)
   rdiscount
   rspec-rails

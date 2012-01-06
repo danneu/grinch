@@ -16,6 +16,7 @@ end
 
 group :development do
   gem 'nifty-generators'
+  gem 'thin'
 end
 
 group :test do

@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.0.rc1'
-gem 'sqlite3'
+gem 'pg'
 gem 'sorcery'
 gem 'rdiscount'
 gem 'coderay'
@@ -15,6 +15,7 @@ group :assets do
 end
 
 group :development do
+gem 'sqlite3'
   gem 'nifty-generators'
   gem 'thin'
 end

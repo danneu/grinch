@@ -187,7 +187,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   coderay
-  coffee-rails
+  coffee-rails (~> 3.2.0)
   factory_girl_rails
   guard-rspec
   guard-spork
@@ -198,10 +198,10 @@ DEPENDENCIES
   rails (= 3.2.0.rc1)
   rdiscount
   rspec-rails
-  sass-rails
+  sass-rails (~> 3.2.0)
   sorcery
   spork (~> 0.9.0.rc)
   sqlite3
   thin
   turn (~> 0.8.3)
-  uglifier
+  uglifier (>= 1.0.3)

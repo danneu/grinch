@@ -36,6 +36,7 @@ to understand the code.
   which then renders html saved in `@post.rendered_body`. This is handled with
   the RDiscount gem.
 * **Authentication**: Uses the Sorcery gem which was a great break from Devise.
+
     Log in at: localhost:3000/login
     Log out at: localhost:3000/logout
 * **Authorization**: Any User can do anything.

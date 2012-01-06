@@ -1,18 +1,19 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.0.rc1'
+#gem 'rails', '3.2.0.rc1'
+gem 'rails', '3.1.3'
 gem 'thin'
 gem 'pg'
 gem 'sorcery'
 gem 'rdiscount'
 gem 'coderay'
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 1.0.19'
 gem 'rspec-rails', :group => [:test, :development]
 
 group :assets do
-  gem 'sass-rails', '~> 3.2.0'
-  gem 'coffee-rails', '~> 3.2.0'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails', "~> 3.1.5"
+  gem 'coffee-rails', "~> 3.1.1"
+  gem 'uglifier'
 end
 
 group :development do

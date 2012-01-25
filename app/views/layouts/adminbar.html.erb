@@ -1,0 +1,25 @@
+<% content_for :adminbar do %>
+
+
+  <div class="admin-bar" style="padding: 0 10px;">
+    <span style="float: left">
+      <%= link_to "New Post", new_admin_post_path %>
+      <%= link_to "New Category", new_admin_category_path %>
+      <%= link_to "Categories", admin_categories_path %>
+    </span>
+    <span style="float: right;">
+      You are logged in.
+      <%= link_to "Log out", logout_path %> 
+    </span>
+    <% if content_for? :admin %> 
+      <span style="margin: 0 auto;">
+        <%= yield :admin %>
+      </span>
+    <% end %>
+    <br style="clear: both;" />
+  </div> 
+
+
+
+<% end %>
+<%= render file: "layouts/application" %>

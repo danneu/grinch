@@ -1,18 +1,17 @@
 <% title @post.title %>
 
-
-<% if current_user %>
+<% if admin_controller? %>
   <% content_for :admin do %>
     This Post: 
-    <%= link_to "Edit", edit_post_path(@post) %>
-    <%= link_to "Destroy", @post, :confirm => 'Are you sure?', :method => :delete  %>
+    <%= link_to "Edit", edit_admin_post_path(@post) %>
+    <%= link_to "Destroy", admin_post_path(@post), :confirm => 'Are you sure?', :method => :delete  %>
   <% end %>
 <% end %>
 
 <div class="post-meta clearfix">
   <div class="post-categories thirteen columns alpha">
     <% unless @post.categories.empty? %>
-      <%= raw @post.categories.map { |c| link_to c.name, c }.to_sentence %>
+      <%= raw @post.categories.map { |c| gated_link_to(c.name, category_path(c)) }.to_sentence %>
     <% end %>
   </div>
   <div class="post-date three columns omega">

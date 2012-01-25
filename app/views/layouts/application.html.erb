@@ -9,25 +9,7 @@
   </head>
   <body>
 
-    <% if current_user %>
-      <div class="admin-bar" style="padding: 0 10px;">
-        <span style="float: left">
-          <%= link_to "New Post", new_post_path %>
-          <%= link_to "New Category", new_category_path %>
-          <%= link_to "Categories", categories_path %>
-        </span>
-        <span style="float: right;">
-          You are logged in.
-          <%= link_to "Log out", logout_path %> 
-        </span>
-        <% if content_for? :admin %> 
-          <span style="margin: 0 auto;">
-          <%= yield :admin %>
-        </span>
-        <% end %>
-        <br style="clear: both;" />
-      </div> 
-    <% end %>
+    <%= yield :adminbar %>
 
     <div class="container">
       <% flash.each do |name, msg| %>

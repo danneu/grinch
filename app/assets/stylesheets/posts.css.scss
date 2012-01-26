@@ -10,3 +10,11 @@
   }
 }
 
+.post-body {
+	ol, ul { margin-left: 30px; }
+	ul { list-style: disc outside; }
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px dotted #999;
+}
+

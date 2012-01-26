@@ -1,0 +1,23 @@
+<% title "Current Projects" %>
+
+<div class"sixteen columns projects">
+
+  <% @projects.each do |project| %>
+    <div class="row project">
+      <div class="five columns alpha project-vitals">
+        <h3 class="project-title"><%= project.name %></h3>
+        <% if project.links %>
+          <%= links_for project %>
+        <% end %>
+        <p><%= project.description %></p>
+      </div>
+      <div class="eleven columns omega project-details">
+        <ul class="disc">
+          <% project.details.each do |detail| %>
+            <li><%= detail.html_safe %></li> 
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+

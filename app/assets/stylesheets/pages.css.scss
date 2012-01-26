@@ -1,0 +1,20 @@
+.project {
+  margin-top: 20px;
+  border-bottom: 1px dotted #999;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.page-header {
+  border-bottom: 1px dotted black;
+}
+
+.project-title {
+  background-color: #F9FC7E;
+}
+.project-vitals {
+  border: 1px solid #999;
+  text-align: center;
+  margin-bottom: 20px;
+}

@@ -155,6 +155,8 @@
         .container .offset-by-fourteen,
         .container .offset-by-fifteen { padding-left: 0; }
 
+        .header {width: 100%; text-align: center;}
+        .nav {width: 100%; text-align: center;}
     }
 
 
@@ -185,6 +187,7 @@
         .container .sixteen.columns,
         .container .one-third.column,
         .container .two-thirds.column { width: 420px; }
+
     }
 
 
@@ -222,6 +225,3 @@
       width: 0;
       height: 0;
     }
-
-
-

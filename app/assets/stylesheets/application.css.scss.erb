@@ -2,12 +2,7 @@
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
- *= require base
- *= require layout
- *= require skeleton
- *= require posts
- *= require coderay
- (off) require_tree . 
+ *= require_tree . 
  *= require_self
 */
 
@@ -40,6 +35,7 @@ label {display:inline;}
 body {
   font-family: Georgia, 'Times New Roman' ,Times;
   font-size: 16px;
+  padding-bottom: 100px;
 }
 
 .categories {
@@ -80,6 +76,7 @@ a {
 }
 
 .header {
+  line-height: 100%;
   margin-bottom: 25px;
   .logo {
     vertical-align: middle;
@@ -99,11 +96,14 @@ a {
 
   }
   .nav {
-    display: inline;
+    display: inline-block;
     margin: 0;
     .link {
       display: inline;
     }
+  }
+  .tagline {
+    display: inline-block;
   }
 }
 
@@ -117,3 +117,11 @@ a {
     }
   }
 }
+
+footer {
+  clear:both;
+  margin-top: 100px;
+  padding: 10px;
+  border-top: 1px dotted #999;
+}
+

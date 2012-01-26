@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 #gem 'rails', '3.2.0.rc1'
 gem 'rails', '3.1.3'
+gem 'haml-rails'
 gem 'thin'
 gem 'pg'
 gem 'sorcery'

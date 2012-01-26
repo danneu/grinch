@@ -1,0 +1,13 @@
+- title "Current Projects"
+
+- @projects.each do |project|
+  .row.project
+    .five.columns.alpha.project-vitals
+      %h3.project-title= project.name
+      %span= links_for project
+      %p= project.description
+    .eleven.columns.omega.project-details
+      %ul.disc
+        - project.details.each do |detail|
+          %li= detail.html_safe
+

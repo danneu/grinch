@@ -1,0 +1,12 @@
+- title @category.name
+
+- if current_user 
+  - content_for :admin do
+    This Category: 
+    = link_to "Edit", edit_category_path(@category) 
+    = link_to "Destroy", @category, :confirm => 'Are you sure?', :method => :delete 
+
+- if @posts.empty?
+  No posts for this category.
+- else 
+  = render template:  "posts/index" 

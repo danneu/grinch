@@ -75,6 +75,12 @@ GEM
     guard-spork (0.5.0)
       guard (>= 0.10.0)
       spork (>= 0.8.4)
+    haml (3.1.4)
+    haml-rails (0.3.4)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      haml (~> 3.0)
+      railties (~> 3.0)
     hike (1.2.1)
     i18n (0.6.0)
     jquery-rails (1.0.19)
@@ -192,6 +198,7 @@ DEPENDENCIES
   factory_girl_rails
   guard-rspec
   guard-spork
+  haml-rails
   jquery-rails (~> 1.0.19)
   mocha
   nifty-generators

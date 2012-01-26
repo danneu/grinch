@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title= content_for?(:title) ? "#{yield(:title)} — danneu's blog" : "danneu's blog"
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tag 
+    = yield(:head) 
+  %body
+    = yield :adminbar
+    .container
+      = flash_messages
+      .header
+        %h1.logo= link_to "danneu", root_path
+        .tagline &mdash; a 23-year-old guy with a blog &mdash; 
+        %ul.nav
+          %li.link= link_to "about me", about_me_path
+          &mdash;
+          %li.link= link_to "projects", projects_path
+          →
+      .content
+        = content_tag :h2, yield(:title) if show_title?
+        = yield

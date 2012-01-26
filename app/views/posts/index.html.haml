@@ -1,0 +1,6 @@
+.posts.sixteen.columns
+  - @posts.each do |post|
+    .post.row
+      .post-title.twelve.columns.alpha
+        = gated_link_to(post.title, post_path(post))
+      .post-date.four.columns.omega= simple_date post.created_at

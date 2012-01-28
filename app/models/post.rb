@@ -17,23 +17,22 @@ class Post < ActiveRecord::Base
   def create_slug
     self.slug = self.title.parameterize
   end
-
+  
   def render_body
-    require 'rdiscount'
-    require 'cgi'
-    #new_body = coderay(CGI.unescapeHTML(self.body))
-    new_body = coderay(self.body)
-    logger.debug new_body
-    self.rendered_body = RDiscount.new(new_body).to_html
-  end
-
-  def coderay(text)
-    text.gsub(/\<code( lang="(.+?)")?\>(.+?)\<\/code\>/m) do
-      CodeRay.scan($3, $2).div(:css => :class)
-    end
+    require 'redcarpet'
+    extensions = {fenced_code_blocks: true}
+    redcarpet = Redcarpet::Markdown.new(PygmentizeHTML, extensions)
+    self.rendered_body = redcarpet.render(self.body)
   end
 
   def check_for_default_category
     self.categories << Category::DEFAULT_CATEGORY if self.categories.empty?
+  end
+end
+
+class PygmentizeHTML < Redcarpet::Render::HTML
+  def block_code(code, language)
+    require 'pygmentize'
+    Pygmentize.process(code, language)
   end
 end

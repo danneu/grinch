@@ -1,0 +1,55 @@
+$base03:    #002b36;
+$base02:    #073642;
+$base01:    #586e75;
+$base00:    #657b83;
+$base0:     #839496;
+$base1:     #93a1a1;
+$base2:     #eee8d5;
+$base3:     #fdf6e3;
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #268bd2;
+$cyan:      #2aa198;
+$green:     #859900;
+$default: $base0;
+ 
+.highlight { color: $base0; background-color: #1c1c1c; }
+.n { color: $blue; }
+.err { color: $red; background-color: $base02; }
+.cp { color: $base01; font-weight: bold; }
+.cs { color: $base01; font-weight: bold; font-style: italic; }
+.gd { color: $base0; background-color: #fdd; }
+.gd .x { background-color: #faa; }
+.ge { font-style: italic; }
+.gi { background-color: #dfd; }
+.gi .x { background-color: #afa; }
+.go { color: $base0; }
+.gu { color: $magenta; font-weight: bold; }
+.gs { font-weight: bold; }
+.gr,  .gt { color: $magenta; }
+.gh { color: $base01; }
+.gp { color: $base01; }  
+.nb { color: $default; } /* Name.Builtin */
+.ni { color: $magenta; } /* Name.Entity */
+.nt { color: $blue; } /* Name.Tag */
+.w { color: $base01; } /* Text.Whitespace */
+.sr { color: $green; } /* Literal.String.Regex */
+.ss { color: $cyan; } 
+.c,
+.cm,
+.c1 { color: $base01; font-style: italic; }
+.k,  .kc,  .kd,  .kp,  .kr,  .kt,  .o,  .ow { font-weight: bold; }
+.k { color: $default; }
+.kt { color: $yellow; }
+.bp { color: $base1; }
+.nn { color: $base1; }
+.nc { color: $yellow; font-weight: bold; }
+.m,  .mf,  .mh,  .mi,  .mo,  .il { color: $cyan; }
+.s,  .sb,  .sc,  .sd,  .s2,  .se,  .sh,  .si,  .sx,  .s1 { color: $cyan; }
+.na,  .nv { color: $cyan; }
+.no { color: $yellow; }
+.vc,  .vg,  .vi { color: $blue; }
+.ne,  .nf { color: $red; font-weight: bold; }

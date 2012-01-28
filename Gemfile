@@ -6,10 +6,12 @@ gem 'haml-rails'
 gem 'thin'
 gem 'pg'
 gem 'sorcery'
-gem 'rdiscount'
-gem 'coderay'
 gem 'jquery-rails', '~> 1.0.19'
 gem 'rspec-rails', :group => [:test, :development]
+
+gem 'redcarpet'
+gem 'pygmentize'
+gem 'nokogiri'
 
 group :assets do
   gem 'sass-rails', "~> 3.1.5"

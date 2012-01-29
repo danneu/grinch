@@ -3,6 +3,7 @@ class Admin::PostsController < ApplicationController
   before_filter :require_login
 
   def index
+    redirect_to(login_path) unless current_user
     @posts = Post.all
     render template: "posts/index"
   end

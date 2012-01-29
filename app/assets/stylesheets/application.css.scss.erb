@@ -16,6 +16,11 @@ $green: #B5FFC8;
   background-position: 5px;
 }
 
+#about-me {
+	ol, ul { margin-left: 30px; }
+	ul { list-style: disc outside; }
+}
+
 #flash_error {
   background: url("<%= asset_path('error.png') %>") no-repeat #FF9797;
   @include flash;

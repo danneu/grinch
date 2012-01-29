@@ -41,7 +41,6 @@ community.description = "Busy vBulletin forum"
 community.details = <<EOF
   5,000,000 posts, 28,000 members
   Founded in 2007
-  Marketed from scratch
   My crack team of volunteer moderators manages most of it nowadays while I handle the technical side
-  Details available upon request
+  I'd like to one day run it on my own software
 EOF

@@ -9,7 +9,7 @@ class Admin::PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by_slug!(params[:id])
+    @post = Post.find(params[:id])
     render template: "posts/show"
 
   end
@@ -29,11 +29,11 @@ class Admin::PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find_by_slug!(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find_by_slug!(params[:id])
+    @post = Post.find(params[:id])
     if @post.update_attributes(params[:post])
       redirect_to admin_post_path(@post), notice: "Post updated."
     else
@@ -43,7 +43,7 @@ class Admin::PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find_by_slug!(params[:id])
+    @post = Post.find(params[:id])
     @post.destroy
     redirect_to admin_path, notice: "Post deleted."
   end

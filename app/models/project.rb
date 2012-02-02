@@ -26,7 +26,7 @@ darkstrap.details = <<EOF
   Gives Twitter Bootstrap 2 a darker look 
   Cascades over the original Bootstrap CSS file, so just load it after Bootstrap
 EOF
-darkstrap.links = { github: "https://github.com/danneu/darkstrap", demo: "" }
+darkstrap.links = { github: "https://github.com/danneu/darkstrap", demo: "http://danneu.com/darkstrap/darkstrap.html" }
 
 # Grinch
 grinch = Project.new("Grinch")

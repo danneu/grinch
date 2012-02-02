@@ -19,6 +19,16 @@ class Project
   end
 end
 
+# Darkstrap
+darkstrap = Project.new("Darkstrap")
+darkstrap.description = "A dark theme for Twitter Bootstrap 2"
+darkstrap.details = <<EOF
+  Gives Twitter Bootstrap 2 a darker look 
+  Cascades over the original Bootstrap CSS file, so just load it after Bootstrap
+EOF
+darkstrap.links = { github: "https://github.com/danneu/darkstrap", demo: "" }
+
+# Grinch
 grinch = Project.new("Grinch")
 grinch.description = "Blog made with Rails"
 grinch.details = <<EOF
@@ -28,6 +38,7 @@ grinch.details = <<EOF
 EOF
 grinch.links = { github: "https://github.com/danneu/grinch", demo: "http://danneu.com"}
 
+# Symposium
 symposium = Project.new("Symposium")
 symposium.description = "Forum system made with Rails"
 symposium.details = <<EOF
@@ -36,6 +47,7 @@ symposium.details = <<EOF
 EOF
 symposium.links = {github: "https://github.com/danneu/symposium", demo: "http://agathon.herokuapp.com"}
 
+# vBulletin
 community = Project.new("A Large Community")
 community.description = "Busy vBulletin forum"
 community.details = <<EOF

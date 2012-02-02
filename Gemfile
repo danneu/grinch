@@ -1,29 +1,27 @@
 source 'http://rubygems.org'
 
-#gem 'rails', '3.2.0.rc1'
-gem 'rails', '3.1.3'
+gem 'rails', '3.2.0'
 gem 'haml-rails'
 gem 'thin'
 gem 'pg'
 gem 'sorcery'
-gem 'jquery-rails', '~> 1.0.19'
-gem 'rspec-rails', :group => [:test, :development]
+gem 'dalli'
+gem 'jquery-rails'
 
 gem 'redcarpet'
 gem 'pygmentize'
 gem 'nokogiri'
 
 group :assets do
-  gem 'sass-rails', "~> 3.1.5"
-  gem 'coffee-rails', "~> 3.1.1"
+  gem 'sass-rails'
+  gem 'coffee-rails'
   gem 'uglifier'
 end
 
+gem 'rspec-rails', :group => [:test, :development]
 group :development do
   gem 'sqlite3'
-  gem 'nifty-generators'
 end
-
 group :test do
   gem 'turn', '~> 0.8.3', :require => false
   gem 'factory_girl_rails'

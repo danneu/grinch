@@ -3,10 +3,4 @@
     %tr
       %th Category
       %th Posts
-  - @categories.each do |category| 
-    %tr
-      %td.category-name= link_to category.name, category
-      %td.category-post-count= category.posts.count
-      - if current_user
-        %td= link_to "Edit", edit_category_path(category)
-        %td= link_to "Delete", category, confirm: "Are you sure?", method: :delete
+  = render @categories

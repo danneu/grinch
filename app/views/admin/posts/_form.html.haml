@@ -1,6 +1,12 @@
 = form_for @post, url: [:admin, @post], html: { class: "post-form" } do |f|
   = f.label :title
   = f.text_field :title
+  .row
+    = hidden_field_tag "post[category_ids][]", nil
+    - Category.all.each do |category|
+      = check_box_tag "post[category_ids][]", category.id, @post.category_ids.include?(category.id)
+      = category.name
   = f.label :body
   = f.text_area :body
+
   = f.submit

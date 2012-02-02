@@ -19,7 +19,7 @@ class Admin::PostsController < ApplicationController
 
   def create
     @post = Post.new(params[:post])
-    @post.build_categories params[:post][:category_ids]
+    #@post.build_categories params[:post][:category_ids]
     if @post.save
       redirect_to admin_path, notice: "Post created."
     else

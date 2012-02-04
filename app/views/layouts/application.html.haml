@@ -17,7 +17,7 @@
           %li.link= link_to "about me", about_me_path
           &mdash;
           %li.link= link_to "projects", projects_path
-          →
+          &rarr;
       .content
         = content_tag :h2, yield(:title) if show_title?
         = yield

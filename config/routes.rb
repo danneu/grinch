@@ -1,4 +1,6 @@
 Grinch::Application.routes.draw do
+  get "sitemap" => "sitemaps#index"
+
   get "about-me" => "pages#about_me", as: "about_me"
   get "projects" => "pages#projects", as: "projects"
 

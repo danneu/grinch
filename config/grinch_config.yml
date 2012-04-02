@@ -1,0 +1,11 @@
+defaults: &defaults
+  root_url: http://danneu.com
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

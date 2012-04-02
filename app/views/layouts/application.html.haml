@@ -21,3 +21,8 @@
       .content
         = content_tag :h2, yield(:title) if show_title?
         = yield
+      %footer
+        %p 
+          Powered by one, sleepy 
+          %a.heroku(href="http://heroku.com") Heroku 
+          dyno.

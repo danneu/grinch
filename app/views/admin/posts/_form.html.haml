@@ -6,6 +6,7 @@
     - Category.all.each do |category|
       = check_box_tag "post[category_ids][]", category.id, @post.category_ids.include?(category.id)
       = category.name
+  #preview
   = f.label :body
   = f.text_area :body
 

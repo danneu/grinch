@@ -1,5 +1,6 @@
 $(document).ready(function () { 
-  var converter = new Markdown.Converter();
+  //var converter = new Markdown.Converter();
+  var converter = new Markdown.getSanitizingConverter();
   var updatePreview = function () {
     var md = $('#post_body').val();
     var html = converter.makeHtml(md);

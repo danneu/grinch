@@ -8,6 +8,8 @@
       = category.name
   #preview
   = f.label :body
+  %a.preview(href="#") Preview
+  = image_tag asset_path("loading.gif"), class: "loading"
   = f.text_area :body
 
   = f.submit

@@ -13,6 +13,8 @@ class SitemapPinger
       if Rails.env == "production"
         response = Net::HTTP.get_response(URI.parse(request))
         SitemapLogger.info "    #{response.code}: #{response.message}"
+        SitemapLogger.info "    Body: #{response.body}"
+
       end
     end
   end

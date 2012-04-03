@@ -2,6 +2,7 @@ class Admin::PostsController < ApplicationController
   layout "adminbar"
   before_filter :require_login
   cache_sweeper :post_sweeper, only: [:create, :update, :destroy]
+  cache_sweeper :sitemap_sweeper, only: [:create, :destroy]
 
   def index
     redirect_to(login_path) unless current_user

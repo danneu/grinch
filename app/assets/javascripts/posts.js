@@ -8,6 +8,7 @@ $(document).ready(function () {
     $loading.show();
     $.ajax({
       url: '/convert',
+      type: 'post',
       data: {markdown: escape($('#post_body').val())},
       success: function(data) {
         $('#preview').html(data);

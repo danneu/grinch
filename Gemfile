@@ -7,7 +7,6 @@ gem 'pg'
 gem 'sorcery'
 gem 'dalli'
 gem 'jquery-rails'
-
 gem 'redcarpet'
 gem 'pygmentize'
 gem 'nokogiri'
@@ -30,5 +29,9 @@ group :test do
   gem 'mocha'
   gem 'spork', '~> 0.9.0.rc'
   gem 'guard-spork'
+end
+
+group :production do
+  gem 'newrelic_rpm'
 end
 

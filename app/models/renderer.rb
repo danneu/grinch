@@ -4,7 +4,7 @@ class Renderer
   
   def initialize(options)
     @text = options[:text]
-    @toc = options[:toc] || false
+    @generate_toc = options[:generate_toc] || false
     @extensions = extensions
   end
 
@@ -13,19 +13,18 @@ class Renderer
     markdown = Redcarpet::Markdown.new(PygmentizeHTML.new(renderer_options), extensions)
     toc  = html_toc.render(@text)
     html = markdown.render(@text)
-    toc + html
+    @generate_toc ? toc + html : html
   end
 
   private 
 
   def extensions
     {fenced_code_blocks:    true,
-     with_toc_data:         @toc, 
      no_intra_emphasis:     true}
   end
 
   def renderer_options
-    {with_toc_data: @toc} 
+    {with_toc_data: true} 
   end
 end
 

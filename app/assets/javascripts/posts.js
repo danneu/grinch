@@ -18,7 +18,7 @@ $(document).ready(function () {
 
   $preview_button.live('click', function() {
 
-    var generate_toc = $('#post_rendering_options_generate_toc').is(':checked');
+    var generate_toc = $('#post_generate_toc').is(':checked');
     show_loading();
 
     $.ajax({

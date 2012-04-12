@@ -1,5 +1,5 @@
 Grinch::Application.routes.draw do
-  post "convert" => "content#convert", as: "convert", constraints: lambda { |req| req.local? }
+  post "convert" => "content#convert", as: "convert"
   get "sitemap.xml" => "sitemaps#index", as: "sitemap", defaults: { format: 'xml' }
 
   get "about-me" => "pages#about_me", as: "about_me"

@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   attr_accessible :title, :body, :category_ids
-  serialize :rendering_options, Hash
+  serialize :rendering_options
 
   after_initialize :set_default_category
   after_initialize :set_default_rendering_options
@@ -43,7 +43,7 @@ class Post < ActiveRecord::Base
   end
    
   def set_default_rendering_options
-    self.rendering_options[:generate_toc] ||= false
+    self.rendering_options ||= {generate_toc: false}
   end
 
 end

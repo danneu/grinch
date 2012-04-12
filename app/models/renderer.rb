@@ -25,7 +25,7 @@ class Renderer
   end
 
   def renderer_options
-    {with_toc_data: true} 
+    {with_toc_data: @toc} 
   end
 end
 

@@ -1,10 +1,10 @@
 class ContentController < ApplicationController
 
   def convert
-    require 'redcarpet'
-    extensions = {fenced_code_blocks: true}
-    redcarpet = Redcarpet::Markdown.new(PygmentizeHTML, extensions)
-    render text: redcarpet.render(URI::decode(params[:markdown]))
+    text = params[:markdown]
+    generate_toc = params[:generate_toc]
+    renderer = Renderer.new(text: text, generate_toc: generate_toc)
+    render text: renderer.to_html
   end
 
 end

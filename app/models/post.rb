@@ -1,9 +1,7 @@
 class Post < ActiveRecord::Base
   attr_accessible :title, :body, :category_ids
-  serialize :rendering_options
 
   after_initialize :set_default_category
-  after_initialize :set_default_rendering_options
   before_save :render_body
   before_save :set_default_category
   before_save :prune_categories
@@ -40,10 +38,6 @@ class Post < ActiveRecord::Base
 
   def set_default_category
     self.categories << Category::DEFAULT_CATEGORY if self.categories.empty?
-  end
-   
-  def set_default_rendering_options
-    self.rendering_options ||= {generate_toc: false}
   end
 
 end

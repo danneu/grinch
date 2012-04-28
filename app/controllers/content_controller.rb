@@ -2,8 +2,7 @@ class ContentController < ApplicationController
 
   def convert
     text = params[:markdown]
-    generate_toc = params[:generate_toc] || false
-    renderer = Renderer.new(text: text, generate_toc: generate_toc)
+    renderer = Renderer.new(text: text)
     render text: renderer.to_html
   end
 

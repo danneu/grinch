@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :title, :body, :category_ids
+  attr_accessible :title, :body, :category_ids, :rendered_body
 
   after_initialize :set_default_category
   before_save :render_body
@@ -21,6 +21,11 @@ class Post < ActiveRecord::Base
     self.categories = self.categories.uniq
   end
 
+  def render_body
+    renderer = Renderer.new(text: self.body)
+    self.rendered_body = renderer.to_html
+  end
+
   private
   def set_default_category
     self.categories << Category::DEFAULT_CATEGORY.first
@@ -29,11 +34,6 @@ class Post < ActiveRecord::Base
   # Ensure no duplicate categories
   def prune_categories
     self.categories.uniq!
-  end
-
-  def render_body
-    renderer = Renderer.new(text: self.body)
-    self.rendered_body = renderer.to_html
   end
 
   def set_default_category

@@ -5,60 +5,43 @@
 A simple blog system made with Rails.
 
 Lets the admin user log in, CRUD posts/categories, and then generates
-page-cached static files into `public/` (soon).
+page-cached static files into `public/`.
 
 ## Why?
 
-I wanted me own nook of the internet to share my thoughts with and contribute
-back to the communities I've been a part of for years.
+I wasn't happy with the Jekyll workflow. A git push to fix a typo is a bit much. 
 
-I wasn't happy with the Jekyll workflow. Rolling my own blog would be more
+Rolling my own blog would be more
 educational, fun to tweak, and interesting to maintain. I'm working on more
 ambitious apps so I like the idea of having a "serious" app deployed that can
 provide the workflow groundwork for bigger apps instead of practicing all day
-alone in locahost:3000.
-
-I've spent the past year scavenging for free time between university and work to
-teach myself Rails. I intend for this app to be simple enough for any other self-teachers
-to understand the code.
+alone in locahost.
 
 ## The Details
 
-* **Responsive design**: I modified Skeleton to have a max  width of 650px. I
+* **Responsive design**: I modified Skeleton to have a max width of 650px. I
   think it's easier to read.
-* **One interface**: I initially dropped in the Active Admin gem and had the
-  whole new post, authentication, authorization, manage posts workflow solved in
-  10 minutes, but then I read 37Signal's concept of the One Interface which
+* **One interface**: I read 37Signal's concept of the [One Interface](http://gettingreal.37signals.com/ch09_One_Interface.php) which
   makes a compelling case for combining the admin/user interface instead of
-  hiding the admin tools away into a separate admin backend. Active Admin also
-  did too much for me considering the intents of this project.
+  hiding the admin tools away into a separate admin backend.
 * **Markdown formatting**: Write/edit posts in Markdown, saved to `@post.body`
-  which then renders html saved in `@post.rendered_body`. This is handled with
-  the RDiscount gem.
-* **Authentication**: Uses the Sorcery gem which was a great break from Devise.
-
-        Log in at: localhost:3000/login
-        Log out at: localhost:3000/logout
+  which then renders html saved in `@post.rendered_body`.
+* **Post preview**: When writing/editing a post, a preview button will show you what it will look like before you submit it.
+* **Authentication**: Using the Sorcery gem.
 * **Authorization**: Any User can do anything.
-* **Syntax highlighting**: Uses the Coderay gem to colorize blocks of code.
+* **Syntax highlighting**: Uses the Pygmentize to colorize blocks of code.
+* **Sitemap generator**: Whenever a post is created/destroyed, search engines are pinged with an updated sitemap.
 
 ## The Setup
 
-* **Make the admin user**. One good spot to stick this is in the Sorcery Code
-  migration file.
+* **Make the admin user**. 
 
         User.create(username: "Dan", 
                     password: "secret",
                     email:    "dan@example.com")
 
-    (I eventually want the blog to email me if I forget the password.)
-
 ## The TODO List
 
-* Cache all posts to `public/`
 * Add tests
-* Implement security features and test for them, like adding `attr_accessible`
-  to models
-* Generate a sitemap that auto-submits to Google
-* Make a real-time html preview of my Markdown as I type it
+* Categories
 

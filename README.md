@@ -2,7 +2,7 @@
 
 (Work-in-progress)
 
-A simple blog system made with Rails.
+A simple blog system made with Rails. [Live demo](http://danneu.com)
 
 Lets the admin user log in, CRUD posts/categories, and then generates
 page-cached static files into `public/`.

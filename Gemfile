@@ -18,9 +18,6 @@ group :assets do
 end
 
 gem 'rspec-rails', :group => [:test, :development]
-group :development do
-  gem 'sqlite3'
-end
 group :test do
   gem 'turn', '~> 0.8.3', :require => false
   gem 'factory_girl_rails'

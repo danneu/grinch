@@ -12,8 +12,14 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :body, presence: true
 
-  def to_param; "#{id}-#{title}".parameterize; end
-  def category_ids; self.categories.collect(&:id); end
+  def to_param
+    "#{id}-#{title}".parameterize
+  end
+
+  def category_ids
+    self.categories.collect(&:id)
+  end
+
   def build_categories(category_ids)
     category_ids.each do |id|
       self.categories << Category.find(id.to_i) 
@@ -27,6 +33,7 @@ class Post < ActiveRecord::Base
   end
 
   private
+
   def set_default_category
     self.categories << Category::DEFAULT_CATEGORY.first
   end
